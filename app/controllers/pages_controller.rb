@@ -10,6 +10,10 @@ class PagesController < ApplicationController
     redirect_to @page
   end
 
+  def show
+    @page = Page.find(params[:id])
+  end
+
   private
     def page_params
       params.require(:page).permit(:title, :text)
