@@ -14,6 +14,10 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
   end
 
+  def index
+    @pages = Page.all
+  end
+
   private
     def page_params
       params.require(:page).permit(:title, :text)
